@@ -18,7 +18,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/profile-picture", function (req, res) {
-  let img = fs.readFileSync(path.resolve("./images/profile-1.jpg"));
+  let img = fs.readFileSync(path.resolve(`./images/${process.env.IMAGE}.jpg`));
   res.writeHead(200, { "Content-Type": "image/jpg" });
   res.end(img, "binary");
 });
